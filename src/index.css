@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cmd-bg: #030712;
+  --color-cmd-surface: #0f172a;
+  --color-cmd-success: #10b981;
+  --color-cmd-danger: #ef4444;
+  --color-cmd-warning: #f59e0b;
+  --color-cmd-text-primary: #ffffff;
+  --color-cmd-text-secondary: #9ca3af;
+
+  --animate-fade-in-up: fade-in-up 0.4s ease-out forwards;
+  --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-cmd-bg);
+  color: var(--color-cmd-text-primary);
+  /* Allow scrolling for the command center dashboard */
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2); /* success color with opacity */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
